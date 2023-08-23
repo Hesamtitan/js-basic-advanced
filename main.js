@@ -53,11 +53,24 @@
 // foo(baz);
 //HOF high order function
 
-const foo = () => {
-  return () => {
-    console.log("higher Order Function");
-  };
-};
+// const foo = () => {
+//   return () => {
+//     console.log("higher Order Function");
+//   };
+// };
 
-const bar = foo();
-bar();
+// const bar = foo();
+// bar();
+//----------------------------------------------------
+// callBacks
+
+const callBack = () => {
+    console.log("call back");
+  };
+  
+  const myFunction = (cb) => {
+    cb();
+  };
+  
+  myFunction(callBack);
+  
