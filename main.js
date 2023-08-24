@@ -109,8 +109,31 @@
 // console.log(bind())
  //----------------------------------------------------
  //IIFE
- (function () {
-  console.log('hello worrld')
-})()
+//  (function () {
+//   console.log('hello worrld')
+// })()
  //----------------------------------------------------
  //closures
+ function counter() {
+  let count = 0;
+
+  function secend() {
+    console.log(++count);
+  }
+  return secend;
+}
+var add = counter();
+add();
+add();
+//2 way
+function counter2() {
+  let counter = 1;
+
+  return function () {
+    console.log(counter++);
+  };
+}
+const add2 = counter2();
+add2();
+add2();
+add2();
