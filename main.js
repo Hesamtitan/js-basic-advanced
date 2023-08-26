@@ -178,3 +178,15 @@
 // console.log(num.slice(1,3))
 // console.log(num.slice(2))
 //----------------------------------------------------
+//array destructuring
+// let numbers = [1, 2, 3, 4];
+
+//real exap
+// const getData = () => {
+//     return [1, 2, 3];
+//   };
+  
+//   const [first, secend, third] = getData();
+  
+//   console.log(first,secend);
+   //----------------------------------------------------
