@@ -67,14 +67,14 @@
 // const callBack = () => {
 //     console.log("call back");
 //   };
-  
+
 //   const myFunction = (cb) => {
 //     cb();
 //   };
-  
+
 //   myFunction(callBack);
-  //----------------------------------------------------
-  //Returning  functions
+//----------------------------------------------------
+//Returning  functions
 
 //   const foo = () => {
 //     return (name) => {
@@ -82,10 +82,10 @@
 //     };
 //   };
 //   const bar = foo();
-  
+
 //   bar('hesam')
- //----------------------------------------------------
- //call/apply/bind
+//----------------------------------------------------
+//call/apply/bind
 //  const user = {
 //   firstName: "hesam",
 //   lastName: "behnami",
@@ -93,7 +93,6 @@
 //     return `${this.firstName} ${this.lastName} ${country} `;
 //   },
 // };
-
 
 // const secondUser = {
 //   firstName: "ali",
@@ -107,33 +106,75 @@
 // //bind
 // const bind = user.getFullName.bind(secondUser,'iran')
 // console.log(bind())
- //----------------------------------------------------
- //IIFE
+//----------------------------------------------------
+//IIFE
 //  (function () {
 //   console.log('hello worrld')
 // })()
- //----------------------------------------------------
- //closures
- function counter() {
-  let count = 0;
+//----------------------------------------------------
+//closures
+// function counter() {
+//   let count = 0;
 
-  function secend() {
-    console.log(++count);
-  }
-  return secend;
-}
-var add = counter();
-add();
-add();
+//   function secend() {
+//     console.log(++count);
+//   }
+//   return secend;
+// }
+// var add = counter();
+// add();
+// add();
+// add();
 //2 way
-function counter2() {
-  let counter = 1;
+// function counter2() {
+//   let counter = 1;
 
-  return function () {
-    console.log(counter++);
-  };
-}
-const add2 = counter2();
-add2();
-add2();
-add2();
+//   return function () {
+//     console.log(counter++);
+//   };
+// }
+// const add2 = counter2();
+// add2();
+// add2();
+// add2();
+//----------------------------------------------------
+//array function
+// let num = [1, 5, 3, 2, 4];
+// let num = [1, 2, 3, 4, 5];
+
+//sort
+// num.sort()
+// console.log(num)
+
+//fill
+// num.fill(1,false,false)
+// console.log(num)
+
+//filter
+//const array = num.filter((item) => item >= 3);
+// console.log(array)
+
+// const filter2 = (item)=> {
+//   return item >= 220;
+// };
+
+// const array = num.filter(filter2);
+// console.log(array);
+
+//map
+
+// const ddd = num.map((item) => item +2 );
+// console.log(ddd);
+
+
+//reverse
+
+// const ddd = num.reverse((item) => item);
+// console.log(ddd);
+// //or
+// console.log(num.reverse())
+
+//slice
+// console.log(num.slice(1,3))
+// console.log(num.slice(2))
+//----------------------------------------------------
