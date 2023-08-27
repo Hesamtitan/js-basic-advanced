@@ -166,7 +166,6 @@
 // const ddd = num.map((item) => item +2 );
 // console.log(ddd);
 
-
 //reverse
 
 // const ddd = num.reverse((item) => item);
@@ -185,8 +184,18 @@
 // const getData = () => {
 //     return [1, 2, 3];
 //   };
-  
+
 //   const [first, secend, third] = getData();
-  
+
 //   console.log(first,secend);
-   //----------------------------------------------------
+//----------------------------------------------------
+//object destructuring
+const getData = () => {
+  return {
+    userName: "hesam",
+    email: "hesam_titan_666@yahoo.com",
+  };
+};
+const { userName, email } = getData();
+console.log(userName);
+console.log(email);
