@@ -190,12 +190,25 @@
 //   console.log(first,secend);
 //----------------------------------------------------
 //object destructuring
-const getData = () => {
-  return {
-    userName: "hesam",
-    email: "hesam_titan_666@yahoo.com",
-  };
+// const getData = () => {
+//   return {
+//     userName: "hesam",
+//     email: "hesam_titan_666@yahoo.com",
+//   };
+// };
+// const { userName, email } = getData();
+// console.log(userName);
+// console.log(email);
+//----------------------------------------------------
+ //spread operator
+ const num = [1, 2, 3];
+
+const user = {
+  userName: "hesam",
+  email: "hesam_titan_666@gmail.com",
 };
-const { userName, email } = getData();
-console.log(userName);
-console.log(email);
+
+const neWnum = [...num, 4,5 ,0, 's'];
+const neWobject = {...user , userName: 'ali' , userId: 23,email:'ali@yaho.com',};
+console.log(neWobject);
+console.log(neWnum);
