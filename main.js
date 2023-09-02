@@ -201,14 +201,42 @@
 // console.log(email);
 //----------------------------------------------------
  //spread operator
- const num = [1, 2, 3];
+//  const num = [1, 2, 3];
 
-const user = {
-  userName: "hesam",
-  email: "hesam_titan_666@gmail.com",
-};
+// const user = {
+//   userName: "hesam",
+//   email: "hesam_titan_666@gmail.com",
+// };
 
-const neWnum = [...num, 4,5 ,0, 's'];
-const neWobject = {...user , userName: 'ali' , userId: 23,email:'ali@yaho.com',};
-console.log(neWobject);
-console.log(neWnum);
+// const neWnum = [...num, 4,5 ,0, 's'];
+// const neWobject = {...user , userName: 'ali' , userId: 23,email:'ali@yaho.com',};
+// console.log(neWobject);
+// console.log(neWnum);
+//----------------------------------------------------
+const string = "This is a string";
+
+//indexOf
+console.log(string.indexOf(""));
+console.log(string.length)
+
+// lastIndexOf
+console.log(string.lastIndexOf("i"));
+
+//search
+
+console.log(string.search(''));
+
+//subs tring
+console.log(string.substring(0,5));
+
+//slice
+console.log(string.slice(-16))
+
+//replace
+console.log(string.replace('T','D'))
+
+//UpperCase
+console.log(string.toUpperCase())
+
+//lowercase
+console.log(string.toLowerCase())
