@@ -213,30 +213,49 @@
 // console.log(neWobject);
 // console.log(neWnum);
 //----------------------------------------------------
-const string = "This is a string";
+// const string = "This is a string";
 
-//indexOf
-console.log(string.indexOf(""));
-console.log(string.length)
+// //indexOf
+// console.log(string.indexOf(""));
+// console.log(string.length)
 
-// lastIndexOf
-console.log(string.lastIndexOf("i"));
+// // lastIndexOf
+// console.log(string.lastIndexOf("i"));
 
-//search
+// //search
 
-console.log(string.search(''));
+// console.log(string.search(''));
 
-//subs tring
-console.log(string.substring(0,5));
+// //subs tring
+// console.log(string.substring(0,5));
 
-//slice
-console.log(string.slice(-16))
+// //slice
+// console.log(string.slice(-16))
 
-//replace
-console.log(string.replace('T','D'))
+// //replace
+// console.log(string.replace('T','D'))
 
-//UpperCase
-console.log(string.toUpperCase())
+// //UpperCase
+// console.log(string.toUpperCase())
 
-//lowercase
-console.log(string.toLowerCase())
+// //lowercase
+// console.log(string.toLowerCase())
+//----------------------------------------------------
+//time methods
+// const time =new Date(2018,11,15,15,30,50);
+
+// console.log(time);
+ //----------------------------------------------------
+ //prototypes
+ function person(firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.greeting = function () {
+      console.log(`hello ${this.firstName}`);
+    };
+  }
+  person.prototype.coumtry = "canada";
+  const person1 = new person("hesam", "behnami", 34);
+  console.log(person1);
+  
