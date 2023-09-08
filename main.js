@@ -260,21 +260,46 @@
 //   console.log(person1);
 //----------------------------------------------------
 // class person
+// class person {
+//   constructor(firstName, lastName, age) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.age = age;
+//   }
+//   greeting() {
+//     console.log(`
+//     hello ${this.firstName}`);
+//   }
+// }
+// const person1 = new person("hesam", "behnami", 32);
+// console.log(person1);
+// person1.greeting();
+
+// const person2 = new person("homan", "behnami", 32);
+// console.log(person2);
+// person2.greeting();
+//----------------------------------------------------
+//setters and getters
 class person {
   constructor(firstName, lastName, age) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.age = age;
   }
+
+  set lang(value) {
+    this.language = value;
+  }
+  get lang() {
+    //  return this.age;
+    return this.firstName;
+  }
+
   greeting() {
-    console.log(`
-    hello ${this.firstName}`);
+    console.log(`Hello ${this.firstName}`);
   }
 }
-const person1 = new person("hesam","behnami",32);
-console.log(person1)
-person1.greeting()
 
-const person2 = new person("homan","behnami",32);
-console.log(person2)
-person2.greeting() 
+const person1 = new person("Hesam", "behnami", 10);
+person1.language = "Faa";
+console.log(person1.lang);
