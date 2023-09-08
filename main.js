@@ -200,7 +200,7 @@
 // console.log(userName);
 // console.log(email);
 //----------------------------------------------------
- //spread operator
+//spread operator
 //  const num = [1, 2, 3];
 
 // const user = {
@@ -245,17 +245,36 @@
 // const time =new Date(2018,11,15,15,30,50);
 
 // console.log(time);
- //----------------------------------------------------
- //prototypes
- function person(firstName, lastName, age) {
+//----------------------------------------------------
+//prototypes
+//  function person(firstName, lastName, age) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.age = age;
+//     this.greeting = function () {
+//       console.log(`hello ${this.firstName}`);
+//     };
+//   }
+//   person.prototype.coumtry = "canada";
+//   const person1 = new person("hesam", "behnami", 34);
+//   console.log(person1);
+//----------------------------------------------------
+// class person
+class person {
+  constructor(firstName, lastName, age) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.age = age;
-    this.greeting = function () {
-      console.log(`hello ${this.firstName}`);
-    };
   }
-  person.prototype.coumtry = "canada";
-  const person1 = new person("hesam", "behnami", 34);
-  console.log(person1);
-  
+  greeting() {
+    console.log(`
+    hello ${this.firstName}`);
+  }
+}
+const person1 = new person("hesam","behnami",32);
+console.log(person1)
+person1.greeting()
+
+const person2 = new person("homan","behnami",32);
+console.log(person2)
+person2.greeting() 
