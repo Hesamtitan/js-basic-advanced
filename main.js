@@ -281,10 +281,15 @@
 //----------------------------------------------------
 //setters and getters
 class person {
+  static count = 0;
   constructor(firstName, lastName, age) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.age = age;
+    this.count = ++person.count;
+  }
+  static methods(person1) {
+    console.log(`wellcom ${person1.firstName}`);
   }
 
   set lang(value) {
@@ -292,14 +297,30 @@ class person {
   }
   get lang() {
     //  return this.age;
-    return this.firstName;
+    return this.language;
   }
 
   greeting() {
     console.log(`Hello ${this.firstName}`);
   }
 }
+class student extends person {
+  constructor(firstName, lastName, field, avg) {
+    super(firstName, lastName);
+    this.field = field;
+    this.avg = avg;
+  }
+}
 
 const person1 = new person("Hesam", "behnami", 10);
-person1.language = "Faa";
-console.log(person1.lang);
+const person2 = new person("Hesam", "behnami", 10);
+const student1 = new student("ali", "godarzi", 22, "asw", 15);
+const student2 = new student("ali", "godarzi", 22, "asw", 15);
+const student3 = new student("ali", "godarzi", 22, "asw", 15);
+console.log(person.count);
+console.log(student.count);
+console.log(student1);
+person1.greeting();
+student1.greeting();
+person.methods(person1);
+student.methods(student1);
