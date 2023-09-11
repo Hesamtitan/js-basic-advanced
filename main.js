@@ -327,18 +327,44 @@
 //----------------------------------------------------
 //timmer
 
-console.log("star");
+// console.log("star");
 
-const timer = setTimeout(() => {
-  console.log("2");
-}, 5000);
+// const timer = setTimeout(() => {
+//   console.log("2");
+// }, 5000);
 
-console.log("3");
+// console.log("3");
 
-clearTimeout(timer);
+// clearTimeout(timer);
 
-const interval = setInterval(() => {
-    console.log("ss");
-  }, 2000 );
+// const interval = setInterval(() => {
+//     console.log("ss");
+//   }, 2000 );
 
-  clearInterval(interval)
+//   clearInterval(interval)
+//----------------------------------------------------
+//promise
+
+const promis = new Promise((res, rej) => {
+  // setTimeout(() => {
+  //   res();
+  // }, 5000);
+  let x = 0;
+  if (x === 0) {
+    setTimeout(() => {
+      res();
+    }, 3000);
+  } else
+    setTimeout(() => {
+      rej();
+    }, 7000);
+});
+
+promis.then(
+  () => {
+    console.log("resss");
+  },
+  () => {
+    console.log("rejjj ");
+  }
+);
