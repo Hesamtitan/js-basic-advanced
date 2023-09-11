@@ -345,26 +345,52 @@
 //----------------------------------------------------
 //promise
 
-const promis = new Promise((res, rej) => {
-  // setTimeout(() => {
-  //   res();
-  // }, 5000);
-  let x = 0;
-  if (x === 0) {
-    setTimeout(() => {
-      res();
-    }, 3000);
-  } else
-    setTimeout(() => {
-      rej();
-    }, 7000);
-});
+// const promis = new Promise((res, rej) => {
+//   // setTimeout(() => {
+//   //   res();
+//   // }, 5000);
+//   let x = 0;
+//   if (x === 0) {
+//     setTimeout(() => {
+//       res();
+//     }, 3000);
+//   } else
+//     setTimeout(() => {
+//       rej();
+//     }, 7000);
+// });
 
-promis.then(
-  () => {
-    console.log("resss");
-  },
-  () => {
-    console.log("rejjj ");
-  }
-);
+// promis.then(
+//   () => {
+//     console.log("resss");
+//   },
+//   () => {
+//     console.log("rejjj ");
+//   }
+// );
+//----------------------------------------------------
+function foo() {
+  setTimeout(() => {
+    console.log("foo");
+    bar();
+  });
+}
+
+function bar() {
+  setTimeout(() => {
+    console.log("bar");
+    baz();
+  }, 2000);
+}
+
+function baz() {
+  setTimeout(() => {
+    console.log("baz");
+  },2000);
+  // setTimeout(() => {
+  //   foo();
+  // }, 1000);
+}
+
+foo();
+
