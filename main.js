@@ -279,48 +279,66 @@
 // console.log(person2);
 // person2.greeting();
 //----------------------------------------------------
-//setters and getters
-class person {
-  static count = 0;
-  constructor(firstName, lastName, age) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.age = age;
-    this.count = ++person.count;
-  }
-  static methods(person1) {
-    console.log(`wellcom ${person1.firstName}`);
-  }
+//setters and getters & extends & super
+// class person {
+//   static count = 0;
+//   constructor(firstName, lastName, age) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.age = age;
+//     this.count = ++person.count;
+//   }
+//   static methods(person1) {
+//     console.log(`wellcom ${person1.firstName}`);
+//   }
 
-  set lang(value) {
-    this.language = value;
-  }
-  get lang() {
-    //  return this.age;
-    return this.language;
-  }
+//   set lang(value) {
+//     this.language = value;
+//   }
+//   get lang() {
+//     //  return this.age;
+//     return this.language;
+//   }
 
-  greeting() {
-    console.log(`Hello ${this.firstName}`);
-  }
-}
-class student extends person {
-  constructor(firstName, lastName, field, avg) {
-    super(firstName, lastName);
-    this.field = field;
-    this.avg = avg;
-  }
-}
+//   greeting() {
+//     console.log(`Hello ${this.firstName}`);
+//   }
+// }
+// class student extends person {
+//   constructor(firstName, lastName, field, avg) {
+//     super(firstName, lastName);
+//     this.field = field;
+//     this.avg = avg;
+//   }
+// }
 
-const person1 = new person("Hesam", "behnami", 10);
-const person2 = new person("Hesam", "behnami", 10);
-const student1 = new student("ali", "godarzi", 22, "asw", 15);
-const student2 = new student("ali", "godarzi", 22, "asw", 15);
-const student3 = new student("ali", "godarzi", 22, "asw", 15);
-console.log(person.count);
-console.log(student.count);
-console.log(student1);
-person1.greeting();
-student1.greeting();
-person.methods(person1);
-student.methods(student1);
+// const person1 = new person("Hesam", "behnami", 10);
+// const person2 = new person("Hesam", "behnami", 10);
+// const student1 = new student("ali", "godarzi", 22, "asw", 15);
+// const student2 = new student("ali", "godarzi", 22, "asw", 15);
+// const student3 = new student("ali", "godarzi", 22, "asw", 15);
+// console.log(person.count);
+// console.log(student.count);
+// console.log(student1);
+// person1.greeting();
+// student1.greeting();
+// person.methods(person1);
+// student.methods(student1);
+//----------------------------------------------------
+//timmer
+
+console.log("star");
+
+const timer = setTimeout(() => {
+  console.log("2");
+}, 5000);
+
+console.log("3");
+
+clearTimeout(timer);
+
+const interval = setInterval(() => {
+    console.log("ss");
+  }, 2000 );
+
+  clearInterval(interval)
