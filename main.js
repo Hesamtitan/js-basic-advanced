@@ -346,10 +346,10 @@
 //promise
 
 // const promis = new Promise((res, rej) => {
-//   // setTimeout(() => {
-//   //   res();
-//   // }, 5000);
-//   let x = 0;
+//   setTimeout(() => {
+//     res();
+//   }, 5000);
+//   let x = 1;
 //   if (x === 0) {
 //     setTimeout(() => {
 //       res();
@@ -369,28 +369,63 @@
 //   }
 // );
 //----------------------------------------------------
-function foo() {
-  setTimeout(() => {
-    console.log("foo");
-    bar();
-  });
-}
+// function foo() {
+//   setTimeout(() => {
+//     console.log("foo");
+//     bar();
+//   });
+// }
 
-function bar() {
-  setTimeout(() => {
-    console.log("bar");
-    baz();
-  }, 2000);
-}
+// function bar() {
+//   setTimeout(() => {
+//     console.log("bar");
+//     baz();
+//   }, 2000);
+// }
 
-function baz() {
-  setTimeout(() => {
-    console.log("baz");
-  },2000);
-  // setTimeout(() => {
-  //   foo();
-  // }, 1000);
-}
+// function baz() {
+//   setTimeout(() => {
+//     console.log("baz");
+//   },2000);
+//   // setTimeout(() => {
+//   //   foo();
+//   // }, 1000);
+// }
 
-foo();
+// foo();
+//----------------------------------------------------
+//fetch
+// fetch("https://jsonplaceholder.typicode.com/posts")
+//   .then((res) => console.log(res.json()))
+//   .then((data) => console.log(data));
 
+//----------------------------------------------------
+//awaith
+// const getData = async () => {
+//   const url = "https://jsonplaceholder.typicode.com/posts";
+//   const res = await  fetch(url);
+//   const data = await res.json();
+//   console.log(data);
+// };
+
+// getData()
+
+// ---------------------------------------------------------
+// catch error promise mode
+fetch("https://jsonplaceholder.typicode.com/posts")
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+  .catch((err) => console.log(err));
+
+//catch error await mode
+
+const getData = async () => {
+  try {
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.log(err);
+  }
+};
+getData();
