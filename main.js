@@ -412,20 +412,45 @@
 
 // ---------------------------------------------------------
 // catch error promise mode
-fetch("https://jsonplaceholder.typicode.com/posts")
-  .then((res) => res.json())
-  .then((data) => console.log(data))
-  .catch((err) => console.log(err));
+// fetch("https://jsonplaceholder.typicode.com/posts")
+//   .then((res) => res.json())
+//   .then((data) => console.log(data))
+//   .catch((err) => console.log(err));
 
-//catch error await mode
+// //catch error await mode
 
-const getData = async () => {
-  try {
-    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-    const data = await res.json();
-    console.log(data);
-  } catch (err) {
-    console.log(err);
-  }
-};
-getData();
+// const getData = async () => {
+//   try {
+//     const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+//     const data = await res.json();
+//     console.log(data);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+// getData();
+// ---------------------------------------------------------
+//promise all
+const urls = [
+  "https://jsonplaceholder.typicode.com/posts",
+  "https://jsonplaceholder.typicode.com/todos",
+  "https://jsonplaceholder.typicode.com/photos",
+  "https://jsonplaceholder.typicode.com/users",
+  "https://jsonplaceholder.typicode.com/albums",
+];
+
+const requests = urls.map((url) => fetch(url));
+console.log(requests);
+
+Promise.all(requests)
+    .then((responses) => {
+     console.log(responses);
+     const data = responses.map((res) => res.json());
+
+  console.log(data);
+
+  Promise.all(data)
+      .then((finallResoult) => console.log(finallResoult));
+});
+
+ 
